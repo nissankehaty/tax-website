@@ -14,7 +14,7 @@ import ProfileStep from "@/pages/steps/ProfileStep";
 import W2Step from "@/pages/steps/W2Step";
 import RentalStep from "@/pages/steps/RentalStep";
 import SelfEmploymentStep from "@/pages/steps/SelfEmploymentStep";
-import InvestmentStep from "@/pages/steps/InvestmentsStep"; // ✅ plural name
+import InvestmentsStep from "@/pages/steps/InvestmentsStep";
 import EducationStep from "@/pages/steps/EducationStep";
 import RetirementStep from "@/pages/steps/RetirementStep";
 import CreditsStep from "@/pages/steps/CreditsStep";
@@ -31,7 +31,7 @@ const router = createHashRouter([
       { path: "/steps/w2", element: <W2Step /> },
       { path: "/steps/rentals", element: <RentalStep /> },
       { path: "/steps/self-employment", element: <SelfEmploymentStep /> },
-      { path: "/steps/investments", element: <InvestmentStep /> },
+      { path: "/steps/investments", element: <InvestmentsStep /> },
       { path: "/steps/education", element: <EducationStep /> },
       { path: "/steps/retirement", element: <RetirementStep /> },
       { path: "/steps/credits", element: <CreditsStep /> },
