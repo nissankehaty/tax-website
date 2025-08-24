@@ -1,17 +1,19 @@
 import React from "react";
 import { TextInput } from "./TextInput";
 
-export const formatCurrency = (value: string) => {
-  const numeric = value.replace(/[^\\d.]/g, "");
-  if (!numeric) return "";
-  const number = parseFloat(numeric);
+// Helper to format a number string into currency
+export const formatCurrency = (value: string | number | undefined | null) => {
+  const numericString = String(value ?? "").replace(/[^\d.]/g, "");
+  if (!numericString) return "";
+  const number = parseFloat(numericString);
+  if (isNaN(number)) return "";
   return number.toLocaleString("en-US", { style: "currency", currency: "USD" });
 };
 
 interface DollarInputProps {
   label: string;
   name: string;
-  value: string;
+  value: string | number | undefined | null;
   onChange: (value: string) => void;
   error?: string;
 }
@@ -24,8 +26,8 @@ export const DollarInput: React.FC<DollarInputProps> = ({
   error,
 }) => {
   const handleChange = (raw: string) => {
-    const stripped = raw.replace(/[^\\d.]/g, "");
-    onChange(stripped);
+    const cleaned = raw.replace(/[^\d.]/g, ""); // strip non-numeric
+    onChange(cleaned);
   };
 
   return (
