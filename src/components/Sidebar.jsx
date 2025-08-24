@@ -4,13 +4,13 @@ import { NavLink } from "react-router-dom";
 
 const steps = [
   { name: "Profile", to: "/steps/profile" },
-  { name: "W2 Income", to: "/steps/w2" },
-  { name: "Self Employment", to: "/steps/self-employment" },
-  { name: "Rental Income", to: "/steps/rentals" },
-  { name: "Investments", to: "/steps/investments" }, // ✅ FIXED
+  { name: "W-2 Income", to: "/steps/w2" },
+  { name: "Rentals", to: "/steps/rentals" },
+  { name: "Self-Employment", to: "/steps/self-employment" },
+  { name: "Investments", to: "/steps/investments" },
   { name: "Education", to: "/steps/education" },
   { name: "Retirement", to: "/steps/retirement" },
-  { name: "Credits", to: "/steps/credits" },         // ✅ FIXED
+  { name: "Credits", to: "/steps/credits" },
   { name: "Summary", to: "/steps/summary" },
 ];
 
