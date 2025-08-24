@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import "./index.css";
+import router from "./router";
 
 /** Layout & core pages */
 import AppLayout from "./layouts/AppLayout.jsx";
@@ -16,24 +17,6 @@ import InvestmentsStep from "./pages/steps/InvestmentsStep.jsx";
 import DeductionsStep from "./pages/steps/DeductionsStep.jsx";
 import CreditsStep from "./pages/steps/CreditsStep.jsx";
 import ReviewStep from "./pages/steps/ReviewStep.jsx";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <AppLayout />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: "/step/profile", element: <ProfileStep /> },
-      { path: "/step/w2", element: <W2Step /> },
-      { path: "/step/rental", element: <RentalStep /> },
-      { path: "/step/investments", element: <InvestmentsStep /> },
-      { path: "/step/deductions", element: <DeductionsStep /> },
-      { path: "/step/credits", element: <CreditsStep /> },
-      { path: "/step/review", element: <ReviewStep /> },
-    ],
-  },
-  { path: "*", element: <NotFound /> },
-]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
